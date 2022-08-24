@@ -1,0 +1,46 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-icon {
+  margin-right:1rem;
+}
+
+.mat-list-item {
+  font-size:0.9rem;
+}
+
+.wrapper {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.img-wrapper {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.logo-image {
+  max-width: 30%;
+}
+
+.active-link {
+  background: #494949;
+}

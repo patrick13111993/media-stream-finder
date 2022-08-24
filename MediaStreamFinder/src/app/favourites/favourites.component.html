@@ -1,0 +1,14 @@
+<h1>Favourites</h1>
+
+<app-loading-spinner *ngIf="loading"></app-loading-spinner>
+
+<div class="no-favs" *ngIf="favourites?.length < 1 && !loading">
+    <mat-icon>favorite_border</mat-icon><br><br>
+    <p>No movies in favourites yet!</p>
+</div>
+
+<div fxLayout="row wrap" fxLayoutGap="16px">
+    <div fxFlex="23%" fxFlex.xs="90%" fxFlex.sm="30%" *ngFor="let favourite of favourites">
+        <app-movie-item [movie]="favourite"></app-movie-item>
+    </div>
+</div>

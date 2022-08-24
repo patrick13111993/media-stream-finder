@@ -1,0 +1,25 @@
+<div *ngIf="!hasProviders" class="error">
+    <mat-icon>info</mat-icon>
+    <p>None found!</p>
+</div>
+
+<h3 *ngIf="hasRentProviders">Rent:</h3>
+    <div fxLayout="row wrap" fxLayoutGap="16px">
+        <div fxFlex="10%" fxFlex.xs="90%" fxFlex.sm="30%" *ngFor="let provider of rent">
+            <app-watch-provider-item [watchProvider]="provider"></app-watch-provider-item>
+        </div>
+    </div><br>
+
+    <h3 *ngIf="hasBuyProviders">Buy:</h3>
+    <div fxLayout="row wrap" fxLayoutGap="16px">
+        <div fxFlex="10%" fxFlex.xs="90%" fxFlex.sm="30%" *ngFor="let provider of buy">
+            <app-watch-provider-item [watchProvider]="provider"></app-watch-provider-item>
+        </div>
+    </div><br>
+
+    <h3 *ngIf="hasFlatrateProviders">Stream on:</h3>
+    <div fxLayout="row wrap" fxLayoutGap="16px">
+        <div fxFlex="10%" fxFlex.xs="90%" fxFlex.sm="30%" *ngFor="let provider of flatrate">
+            <app-watch-provider-item [watchProvider]="provider"></app-watch-provider-item>
+        </div>
+    </div>

@@ -1,0 +1,18 @@
+<div *ngIf="searchResults.length < 1 && !searching" class="error">
+    <mat-icon>sick</mat-icon>
+    <p>No movies found!</p>
+</div>
+
+<div *ngIf = "searching">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+
+    <div fxLayout="row wrap" fxLayoutGap="16px" *ngIf="!searching">
+        <div fxFlex="23%" fxFlex.xs="90%" fxFlex.sm="30%" *ngFor="let movie of searchResults">
+            <app-movie-item [movie]="movie"></app-movie-item>
+        </div>
+    </div>
+    <h3>Page: {{page}}</h3>
+    <button class="page-button" mat-raised-button color="primary" *ngIf="page > 1" (click)="onLastPage()">Page {{page-1}}...</button>
+    <button class="page-button" mat-raised-button color="primary" *ngIf="hasNextPage" (click)="onNextPage()">Page {{page+1}}...</button>
+    

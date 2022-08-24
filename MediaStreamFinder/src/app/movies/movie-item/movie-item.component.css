@@ -1,0 +1,23 @@
+.defaultbutton {
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 46%;
+}
+
+.movie-card {
+    max-height: 400px;
+    max-width: 300px;
+    margin-bottom: 16px;
+    padding: 16px;
+}
+
+.movie-image {
+    max-height: 250px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.movie-card-actions {
+    overflow: hidden;
+    max-height: 100px;
+}

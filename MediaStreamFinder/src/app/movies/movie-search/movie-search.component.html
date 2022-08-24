@@ -1,0 +1,8 @@
+<form [formGroup]="searchMovieForm" (ngSubmit)="onSearch()">
+    <mat-form-field>
+        <mat-label>Search Movies...</mat-label>
+        <input matInput placeholder="Movie Title" autocomplete="off" formControlName="title">
+    </mat-form-field>
+    <br>
+    <button mat-flat-button color="primary" [disabled]="!searchMovieForm.valid">Search</button>
+</form>

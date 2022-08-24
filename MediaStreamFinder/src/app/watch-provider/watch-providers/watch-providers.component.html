@@ -1,0 +1,12 @@
+<h1>Select Your Provider Subscriptions</h1>
+
+<form [formGroup]="providerForm" (ngOnChanges)="updateCheckbox()">
+    <div fxLayout="row wrap" fxLayoutGap="16px">
+    <div class="provider-checkbox-card" fxFlex="10%" fxFlex.xs="45%" fxFlex.sm="15%" *ngFor="let provider of providers; let i=index">
+        <mat-card class="provider-card">
+            <input type="checkbox" class="provider-checkbox" value="{{provider.provider_name}}" id="{{provider.provider_id}}" name="{{provider.provider_name}}" (change)="onCheckboxChange($event)">
+            <label for="{{provider.provider_id}}"><img src="{{provider?.logo_path}}"><br>{{provider.provider_name}}</label>
+    </mat-card>
+    </div>
+</div><br>
+</form>

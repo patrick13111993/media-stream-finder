@@ -1,0 +1,29 @@
+<h1>Register</h1>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="standard">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput autocomplete="off" formControlName="email">
+        <mat-error>
+            {{ getEmailError() }}
+        </mat-error>
+    </mat-form-field><br>
+
+    <mat-form-field appearance="standard">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput autocomplete="off" formControlName="password">
+        <mat-error>
+            {{ getPasswordError() }}
+        </mat-error>
+    </mat-form-field><br><br>
+
+    <button mat-flat-button color="primary" type="submit" [disabled]="!registerForm.valid">Register</button><br><br>
+    <mat-error *ngIf="error">
+        {{ error }}
+    </mat-error>
+</form>
+
+<br><br>
+
+<p>Already registered? <a routerLink="../login">Login</a></p>
+<app-loading-spinner *ngIf="loading"></app-loading-spinner>

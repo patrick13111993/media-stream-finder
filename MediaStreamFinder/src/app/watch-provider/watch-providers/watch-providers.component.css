@@ -1,0 +1,16 @@
+.provider-checkbox-card {
+    padding-top: 0.5rem;
+    min-width: 150px;
+}
+
+.provider-checkbox {
+    display: none;
+}
+
+label img {
+    filter: brightness(5%);
+}
+
+:checked+label img {
+    filter: brightness(100%);
+}

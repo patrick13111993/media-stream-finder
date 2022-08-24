@@ -1,0 +1,79 @@
+.movie-full-card {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 16px;
+}
+
+.movie-title {
+    font-size: 4rem;
+    padding-top: 2rem;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    color: white;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
+
+.movie-tagline {
+    font-size: 2.2rem;
+    width:50%;
+    padding-left: 25%;
+    padding-top: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    align-content: center;
+    color: white;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
+
+.movie-overview {
+    font-size: 1.4rem;
+    width:75%;
+    padding-left: 12.5%;
+    padding-top: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    align-content: center;
+    color: white;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
+
+.movie-image {
+    width: 25%;
+    aspect-ratio: 1;
+    align-content: right;
+    padding-right: 1%;
+}
+
+.defaultbutton {
+    margin-right: 10px;
+}
+
+.movie-content {
+    font-size: 1.4rem;
+    color: white;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
+
+table {
+    width: 70%;
+}
+
+.stars {
+    width:150px;
+    white-space: nowrap;
+    margin: auto;
+}
+  
+.star {
+    background: gold;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+  }
+
+  h3 {
+      font-size: 2rem;
+      text-align: left;
+  }

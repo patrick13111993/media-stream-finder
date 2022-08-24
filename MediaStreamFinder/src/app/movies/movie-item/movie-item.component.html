@@ -1,0 +1,10 @@
+<mat-card class="movie-card">
+    <mat-card-title class="movie-title">{{movie.title}}</mat-card-title>
+    <img mat-card-image src={{movie.thumbPath}} alt="movie-image" class="movie-image"/>
+    <mat-card-actions class="movie-card-actions">
+        <button mat-flat-button color="accent" class="defaultbutton" *ngIf="authenticated && !isFavourite" (click)="onAddFavourite()">Favourite</button>
+        <button mat-flat-button color="warn" class="defaultbutton" *ngIf="authenticated && isFavourite" (click)="onRemoveFavourite()">Remove</button>
+        <button mat-flat-button color="primary" class="defaultbutton" (click)="onViewDetails()">Details</button>
+    </mat-card-actions>
+
+</mat-card>

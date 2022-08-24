@@ -1,0 +1,53 @@
+<div *ngIf="loading">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+
+<mat-card class="movie-full-card" style="background-image: url({{movie?.backdrop_path}}); background-size: cover; background-repeat: no-repeat;">
+    <mat-card-title-group>
+        <mat-card-title class="movie-title">{{movie?.title}}</mat-card-title>
+        <mat-card-subtitle class="movie-tagline">{{movie?.tagline}}</mat-card-subtitle>
+        <mat-card-subtitle class="movie-overview">{{movie?.overview}}</mat-card-subtitle>
+        <img mat-card-image src={{movie?.thumbPath}} alt="movie-image" class="movie-image" />
+    </mat-card-title-group>
+    <mat-card-content class="movie-content">
+        <table>
+            <tr>
+                <th>Release date</th>
+                <th>Revenue</th>
+                <th>Runtime</th>
+                <th>Rating</th>
+                <th *ngIf="movie?.adult">Age rating</th>
+            </tr>
+            <tr>
+                <td>{{movie?.release_date}}</td>
+                <td>{{movie?.revenue | currency:'USD':'symbol':'3.0'}}</td>
+                <td>{{movie?.runtime}} minutes</td>
+                <td>
+                    <div class="stars" id="stars">
+                        <div class="star" id="star1"></div>
+                        <div class="star" id="star2"></div>
+                        <div class="star" id="star3"></div>
+                        <div class="star" id="star4"></div>
+                        <div class="star" id="star5"></div>
+                </div>
+                </td>
+                <td *ngIf="movie?.adult">18+</td>
+            </tr>
+        </table>
+        <mat-card-actions align="end">
+            <button mat-flat-button color="accent" class="defaultbutton" *ngIf="authenticated && !isFavourite" (click)="onAddFavourite()">Favourite</button>
+            <button mat-flat-button color="warn" class="defaultbutton" *ngIf="authenticated && isFavourite" (click)="onRemoveFavourite()">Remove</button>
+            <button mat-flat-button color="primary" class="defaultbutton" (click)="onNavigateBack()">Back</button>
+        </mat-card-actions>
+    </mat-card-content>
+
+</mat-card><br>
+<div class="providers">
+    <div class="user-providers" *ngIf="authenticated">
+    <h3>Subscribed Providers</h3><br>
+    <app-watch-provider-list [providers]="userProviderList"></app-watch-provider-list><br><br>
+</div>
+<!-- Optionally display all available providers -->
+    <!-- <h3>All Providers</h3><br>
+    <app-watch-provider-list [providers]="providers"></app-watch-provider-list> -->
+</div>

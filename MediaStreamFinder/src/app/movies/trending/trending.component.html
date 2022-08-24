@@ -1,0 +1,24 @@
+<div *ngIf="upcomingResults.length < 1 && popularResults.length < 1 && !searching && isHome" class="error">
+    <mat-icon>sick</mat-icon>
+    <p>Error retrieving trending movies. Service may be unavailable</p>
+</div>
+
+<div *ngIf = "searching">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+
+<h3 *ngIf="isHome">Trending Movies</h3>
+<div fxLayout="row wrap" fxLayoutGap="16px" *ngIf="!searching && isHome">
+    <div fxFlex="23%" fxFlex.xs="90%" fxFlex.sm="30%" *ngFor="let movie of popularResults">
+        <app-movie-item [movie]="movie"></app-movie-item>
+    </div>
+</div>
+
+<h3 *ngIf="isHome">Upcoming Releases</h3>
+    <div fxLayout="row wrap" fxLayoutGap="16px" *ngIf="!searching && isHome">
+        <div fxFlex="23%" fxFlex.xs="90%" fxFlex.sm="30%" *ngFor="let movie of upcomingResults">
+            <app-movie-item [movie]="movie"></app-movie-item>
+        </div>
+    </div>
+
+
